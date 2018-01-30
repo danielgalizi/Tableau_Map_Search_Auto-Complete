@@ -5,14 +5,39 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Tableau_Map_Search_Auto-Complete</title>
+    <script>
+        function getParameter(theParameter) { 
+            var params = window.location.search.substr(1).split('&');
+           
+            for (var i = 0; i < params.length; i++) {
+              var p=params[i].split('=');
+              if (p[0] == theParameter) {
+                return decodeURIComponent(p[1]);
+                
+              }
+            }
+            return false;
+          }
+        </script>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=#############GOOGLE API KEY###############&libraries=places"></script>
+<script>
+
+
+var api_key_str="https://maps.googleapis.com/maps/api/js?key="+getParameter('google_api_key')+"&libraries=places";
+    console.log(api_key_str);
+
+document.write("<script type='text/javascript' src="+ api_key_str + "><\/script>");
+
+
+</script>
+
+   
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdit-GymHhJtNvB-kuXzN5rZKmsUqHRlU&libraries=places"></script> -->
 
     <script type="text/javascript"   src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
 
     <script>
         var lat, lon, lat2, lng2,input,autocomplete,textobusca
-
         function init() {
             input = document.getElementById('locationTextField');            
             
@@ -21,16 +46,10 @@
                 function () {
                     var place = autocomplete.getPlace();
                     lat = place.geometry.location.lat();
-
                     lat2 = lat.toString().replace(/\./g, ',');
-
                     lng = place.geometry.location.lng();
-
                     lng2 = lng.toString().replace(/\./g, ',');
-
-                    textobusca=document.getElementById('locationTextField').value;
-                    console.log("teste #####"+textobusca);
-
+                    textobusca=document.getElementById('locationTextField').value;                    
                     //Show LAT/LON variables inside output DIV
                     // document.getElementById("output").innerHTML = "Lat: " + lat + "<br />Lng: " + lng;
                     viz.getWorkbook().changeParameterValueAsync(getParameter('par_name_actv'), 1).then(
@@ -53,19 +72,14 @@
                             console.log("LOCATION: "+ textobusca);
                             console.log(getParameter('par_name_return'));
                         });
-
-
-
                 }
             );
         }
-
         google.maps.event.addDomListener(window, 'load', init);
     </script>
 
     <script type="text/javascript">
         var viz, workbook, activeSheet
-
         function initViz() {
             var containerDiv = document.getElementById("vizContainer"),
                 url = getParameter('viz_url'),
@@ -80,49 +94,36 @@
                         
                     }
                 };
-
             viz = new tableau.Viz(containerDiv, url, options);
-
         }
-
-
         function exportPDF() {
             viz.showExportPDFDialog();
         }
-
         function exportData() {
             viz.showExportDataDialog();
         }
-
         function listenToMarksSelection() {
             viz.addEventListener(tableau.TableauEventName.MARKS_SELECTION, onMarksSelection);
         }
-
         function onMarksSelection(marksEvent) {
             return marksEvent.getMarksAsync().then(reportSelectedMarks);
         }
-
         function reportSelectedMarks(marks) {
             var html = "";
-
             for (var markIndex = 0; markIndex < marks.length; markIndex++) {
                 
                 var pairs = marks[markIndex].getPairs();
                 html += "<b>Mark " + markIndex + ":</b><ul>";
-
                 for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
                     var pair = pairs[pairIndex];
                     html += "<li><b>Field Name:</b> " + pair.fieldName;
                     html += "<br/><b>Value:</b> " + pair.formattedValue + "</li>";
                 }
-
                 html += "</ul>";
             }
-
             var infoDiv = document.getElementById('markDetails');
             infoDiv.innerHTML = html;
         }
-
         function showlatlon() {
             var lat_manual = "-11,694";
             var lon_manual = "-48,978";
@@ -142,21 +143,7 @@
     </script>
 
 
-<script>
-function getParameter(theParameter) { 
-    var params = window.location.search.substr(1).split('&');
-   
-    for (var i = 0; i < params.length; i++) {
-      var p=params[i].split('=');
-      if (p[0] == theParameter) {
-        return decodeURIComponent(p[1]);
-        
-      }
-    }
-    return false;
-  }
 
-</script>
 
 
 </head>
