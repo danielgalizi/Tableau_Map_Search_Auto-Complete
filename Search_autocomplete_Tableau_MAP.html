@@ -60,10 +60,10 @@ document.write("<script type='text/javascript' src="+ api_key_str + "><\/script>
             google.maps.event.addListener(autocomplete, 'place_changed',
                 function () {
                     var place = autocomplete.getPlace();
-                    lat = place.geometry.location.lat();
-                    lat2 = lat.toString().replace(/\./g,whatDecimalSeparator());
-                    lng = place.geometry.location.lng();
-                    lng2 = lng.toString().replace(/\./g, whatDecimalSeparator());
+                    lat2 = place.geometry.location.lat();
+                    //lat2 = lat.toString().replace(/\./g,whatDecimalSeparator());
+                    lng2 = place.geometry.location.lng();
+                    //lng2 = lng.toString().replace(/\./g, whatDecimalSeparator());
                     textobusca=document.getElementById('locationTextField').value;                    
                     //Show LAT/LON variables inside output DIV
                     // document.getElementById("output").innerHTML = "Lat: " + lat + "<br />Lng: " + lng;
@@ -166,7 +166,7 @@ document.write("<script type='text/javascript' src="+ api_key_str + "><\/script>
 <body>
 
 
-    <label for="locationTextField">Location:</label>
+    <label for="locationTextField">Location</label>
     
     <input id="locationTextField" type="text" size="50">
 
