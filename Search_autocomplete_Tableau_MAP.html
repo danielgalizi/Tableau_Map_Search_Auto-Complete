@@ -60,10 +60,10 @@ document.write("<script type='text/javascript' src="+ api_key_str + "><\/script>
                 function () {
                     var place = autocomplete.getPlace();
                     lat = place.geometry.location.lat();
-                    lat2 = lat.toString();
+                    //lat2 = lat.toString();
                 //lat2 = lat.toString().replace(/\./g,whatDecimalSeparator());
                     lng = place.geometry.location.lng();
-                    lng2 = lng.toString();
+                    //lng2 = lng.toString();
                   //lng2 = lng.toString().replace(/\./g, whatDecimalSeparator());
                     textobusca=document.getElementById('locationTextField').value;                    
                     //Show LAT/LON variables inside output DIV
@@ -73,14 +73,14 @@ document.write("<script type='text/javascript' src="+ api_key_str + "><\/script>
                             console.log("MAP VALUES ACTIVATED");
                             console.log(getParameter('par_name_actv'));
                         });
-                    viz.getWorkbook().changeParameterValueAsync(getParameter('par_name_lat'), lat2).then(
+                    viz.getWorkbook().changeParameterValueAsync(getParameter('par_name_lat'), lat).then(
                         function () {
-                            console.log("LAT: " + lat2);
+                            console.log("LAT: " + lat);
                             console.log(getParameter('par_name_lat'));
                         });
-                    viz.getWorkbook().changeParameterValueAsync(getParameter('par_name_lon'), lng2).then(
+                    viz.getWorkbook().changeParameterValueAsync(getParameter('par_name_lon'), lng).then(
                         function () {
-                            console.log("LON: " + lng2);
+                            console.log("LON: " + lng);
                             console.log(getParameter('par_name_lon'));
                         });
                     viz.getWorkbook().changeParameterValueAsync(getParameter('par_name_return'), textobusca).then(
@@ -167,7 +167,7 @@ document.write("<script type='text/javascript' src="+ api_key_str + "><\/script>
 <body>
 
 
-    <label for="locationTextField">Location</label>
+    <label for="locationTextField">Location:</label>
     
     <input id="locationTextField" type="text" size="50">
 
