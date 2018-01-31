@@ -65,20 +65,11 @@
     <script>
         var lat, lon, lat2, lng2, input, autocomplete, textobusca
 
-
-
-
-
         function whatDecimalSeparator() {
             var n = 1.1;
             n = n.toLocaleString().substring(1, 2);
             return n;
         }
-
-
-
-
-
 
         function init() {
             input = document.getElementById('locationTextField');
@@ -88,10 +79,8 @@
                 function () {
                     var place = autocomplete.getPlace();
                     lat = place.geometry.location.lat();
-                    //lat2 = lat.toString();
                     //lat2 = lat.toString().replace(/\./g,whatDecimalSeparator());
                     lng = place.geometry.location.lng();
-                    //lng2 = lng.toString();
                     //lng2 = lng.toString().replace(/\./g, whatDecimalSeparator());
                     textobusca = document.getElementById('locationTextField').value;
                     //Show LAT/LON variables inside output DIV
@@ -186,10 +175,6 @@
         //         });
         // }
     </script>
-
-
-
-
 
 </head>
 
