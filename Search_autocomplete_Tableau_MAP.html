@@ -2,70 +2,98 @@
 <html>
 
 <head>
+    <style>
+        .button {
+            background-color: rgb(1, 3, 104);
+            /* Green */
+            border: none;
+            color: white;
+            padding: 7px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+
+        input[type=text]#locationTextField {
+            width: 300px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: white;
+            background-image: url('https://danielgalizi.github.io/Tableau_Map_Search_Auto-Complete/searchicon.png');
+            background-position: 10px 12px;
+            background-repeat: no-repeat;
+            padding: 12px 20px 12px 40px;
+            -webkit-transition: width .4s ease-in-out;
+            transition: width .4s ease-in-out;
+        }
+
+        input[type=text]#locationTextField:focus {
+            width: 100%;
+        }
+    </style>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Tableau_Map_Search_Auto-Complete</title>
     <script>
-        function getParameter(theParameter) { 
+        function getParameter(theParameter) {
             var params = window.location.search.substr(1).split('&');
-           
+
             for (var i = 0; i < params.length; i++) {
-              var p=params[i].split('=');
-              if (p[0] == theParameter) {
-                return decodeURIComponent(p[1]);
-                
-              }
+                var p = params[i].split('=');
+                if (p[0] == theParameter) {
+                    return decodeURIComponent(p[1]);
+
+                }
             }
             return false;
-          }
-        </script>
-
-<script>
-
-
-var api_key_str="https://maps.googleapis.com/maps/api/js?key="+getParameter('google_api_key')+"&libraries=places";
-    console.log(api_key_str);
-
-document.write("<script type='text/javascript' src="+ api_key_str + "><\/script>");
-
-
-</script>
-
-   
-      <script type="text/javascript"   src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+        }
+    </script>
 
     <script>
-        var lat, lon, lat2, lng2,input,autocomplete,textobusca
-        
-        
-        
-        
-        
-        function whatDecimalSeparator() {
-    var n = 1.1;
-    n = n.toLocaleString().substring(1, 2);
-    return n;
-}
-        
+        var api_key_str = "https://maps.googleapis.com/maps/api/js?key=" + getParameter('google_api_key') +
+            "&libraries=places";
+        console.log(api_key_str);
 
-        
-        
-        
-          
+        document.write("<script type='text/javascript' src=" + api_key_str + "><\/script>");
+    </script>
+
+
+    <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+
+    <script>
+        var lat, lon, lat2, lng2, input, autocomplete, textobusca
+
+
+
+
+
+        function whatDecimalSeparator() {
+            var n = 1.1;
+            n = n.toLocaleString().substring(1, 2);
+            return n;
+        }
+
+
+
+
+
+
         function init() {
-            input = document.getElementById('locationTextField');            
-            
+            input = document.getElementById('locationTextField');
+
             autocomplete = new google.maps.places.Autocomplete(input);
             google.maps.event.addListener(autocomplete, 'place_changed',
                 function () {
                     var place = autocomplete.getPlace();
                     lat = place.geometry.location.lat();
                     //lat2 = lat.toString();
-                //lat2 = lat.toString().replace(/\./g,whatDecimalSeparator());
+                    //lat2 = lat.toString().replace(/\./g,whatDecimalSeparator());
                     lng = place.geometry.location.lng();
                     //lng2 = lng.toString();
-                  //lng2 = lng.toString().replace(/\./g, whatDecimalSeparator());
-                    textobusca=document.getElementById('locationTextField').value;                    
+                    //lng2 = lng.toString().replace(/\./g, whatDecimalSeparator());
+                    textobusca = document.getElementById('locationTextField').value;
                     //Show LAT/LON variables inside output DIV
                     // document.getElementById("output").innerHTML = "Lat: " + lat + "<br />Lng: " + lng;
                     viz.getWorkbook().changeParameterValueAsync(getParameter('par_name_actv'), 1).then(
@@ -85,7 +113,7 @@ document.write("<script type='text/javascript' src="+ api_key_str + "><\/script>
                         });
                     viz.getWorkbook().changeParameterValueAsync(getParameter('par_name_return'), textobusca).then(
                         function () {
-                            console.log("LOCATION: "+ textobusca);
+                            console.log("LOCATION: " + textobusca);
                             console.log(getParameter('par_name_return'));
                         });
                 }
@@ -96,6 +124,7 @@ document.write("<script type='text/javascript' src="+ api_key_str + "><\/script>
 
     <script type="text/javascript">
         var viz, workbook, activeSheet
+
         function initViz() {
             var containerDiv = document.getElementById("vizContainer"),
                 url = getParameter('viz_url'),
@@ -107,55 +136,55 @@ document.write("<script type='text/javascript' src="+ api_key_str + "><\/script>
                         activeSheet = workbook.getActiveSheet();
                         listenToMarksSelection();
                         console.log("Entrou na etapa EMBED");
-                        
+
                     }
                 };
             viz = new tableau.Viz(containerDiv, url, options);
         }
-        function exportPDF() {
-            viz.showExportPDFDialog();
-        }
-        function exportData() {
-            viz.showExportDataDialog();
-        }
-        function listenToMarksSelection() {
-            viz.addEventListener(tableau.TableauEventName.MARKS_SELECTION, onMarksSelection);
-        }
-        function onMarksSelection(marksEvent) {
-            return marksEvent.getMarksAsync().then(reportSelectedMarks);
-        }
-        function reportSelectedMarks(marks) {
-            var html = "";
-            for (var markIndex = 0; markIndex < marks.length; markIndex++) {
-                
-                var pairs = marks[markIndex].getPairs();
-                html += "<b>Mark " + markIndex + ":</b><ul>";
-                for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
-                    var pair = pairs[pairIndex];
-                    html += "<li><b>Field Name:</b> " + pair.fieldName;
-                    html += "<br/><b>Value:</b> " + pair.formattedValue + "</li>";
-                }
-                html += "</ul>";
-            }
-            var infoDiv = document.getElementById('markDetails');
-            infoDiv.innerHTML = html;
-        }
-        function showlatlon() {
-            var lat_manual = "-11,694";
-            var lon_manual = "-48,978";
-            viz.getWorkbook().changeParameterValueAsync("ACTIVATE", 1).then(
-                function () {
-                    console.log("MAP VALUES ACTIVATED");
-                });
-            viz.getWorkbook().changeParameterValueAsync("LAT_PAR", lat_manual).then(
-                function () {
-                    console.log("LAT: " + lat_manual);
-                });
-            viz.getWorkbook().changeParameterValueAsync("LON_PAR", lon_manual).then(
-                function () {
-                    console.log("LON: " + lon_manual);
-                });
-        }
+        // function exportPDF() {
+        //     viz.showExportPDFDialog();
+        // }
+        // function exportData() {
+        //     viz.showExportDataDialog();
+        // }
+        // function listenToMarksSelection() {
+        //     viz.addEventListener(tableau.TableauEventName.MARKS_SELECTION, onMarksSelection);
+        // }
+        // function onMarksSelection(marksEvent) {
+        //     return marksEvent.getMarksAsync().then(reportSelectedMarks);
+        // }
+        // function reportSelectedMarks(marks) {
+        //     var html = "";
+        //     for (var markIndex = 0; markIndex < marks.length; markIndex++) {
+
+        //         var pairs = marks[markIndex].getPairs();
+        //         html += "<b>Mark " + markIndex + ":</b><ul>";
+        //         for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
+        //             var pair = pairs[pairIndex];
+        //             html += "<li><b>Field Name:</b> " + pair.fieldName;
+        //             html += "<br/><b>Value:</b> " + pair.formattedValue + "</li>";
+        //         }
+        //         html += "</ul>";
+        //     }
+        //     var infoDiv = document.getElementById('markDetails');
+        //     infoDiv.innerHTML = html;
+        // }
+        // function showlatlon() {
+        //     var lat_manual = "-11,694";
+        //     var lon_manual = "-48,978";
+        //     viz.getWorkbook().changeParameterValueAsync("ACTIVATE", 1).then(
+        //         function () {
+        //             console.log("MAP VALUES ACTIVATED");
+        //         });
+        //     viz.getWorkbook().changeParameterValueAsync("LAT_PAR", lat_manual).then(
+        //         function () {
+        //             console.log("LAT: " + lat_manual);
+        //         });
+        //     viz.getWorkbook().changeParameterValueAsync("LON_PAR", lon_manual).then(
+        //         function () {
+        //             console.log("LON: " + lon_manual);
+        //         });
+        // }
     </script>
 
 
@@ -164,22 +193,17 @@ document.write("<script type='text/javascript' src="+ api_key_str + "><\/script>
 
 </head>
 
-<body>
+<body onload="initViz();">
+    <!-- <label for="locationTextField">Location:</label> -->
+    <input id="locationTextField" type="text">
+    <!-- <div id="output"></div> -->
+    <div id="vizContainer" style="position:fixed; width:100%; height: calc( 100% - 60px ); top:60px; left:0; right:0;">
+    </div>
+    <!-- <button class="button" onclick="exportPDF()">Export PDF</button> -->
+    <!-- <button class="button" onclick="exportData()">Export Data</button> -->
+    <!-- <button onclick="showlatlon()">setlatlon</button> -->
+    <!-- <div id="markDetails"></div> -->
 
-
-    <label for="locationTextField">Location:</label>
-    
-    <input id="locationTextField" type="text" size="50">
-
-    <div id="output"></div>
-
-    <body onload="initViz();">
-        <div id="vizContainer" style="position:fixed; width:100%; height:100%; border:none; margin:0; padding:0;"></div>
-        <button onclick="exportPDF()">Export PDF</button>
-        <button onclick="exportData()">Export Data</button>
-        <!-- <button onclick="showlatlon()">setlatlon</button> -->
-        <div id="markDetails"></div>
-
-    </body>
+</body>
 
 </html>
