@@ -26,11 +26,11 @@ The Engine can interact and communicate with Tableau and you'll get the data int
 
 3. Replace URL **VARIABLES** with the values you have from the previous step (don't forget to keep the separators):
 
-<p><em>&nbsp; &nbsp; &nbsp; https://danielgalizi.github.io/Tableau_Map_Search_Auto-Complete/Search_autocomplete_Tableau_MAP.html</em><strong>?</strong><br /><strong>&nbsp; &nbsp; &nbsp; par_name_actv</strong>=Activate parameter name<strong>&amp;</strong><br /><strong>&nbsp; &nbsp; &nbsp; par_name_lat</strong>=Latitude parameter name<strong>&amp;</strong><br /><strong>&nbsp; &nbsp; &nbsp; par_name_lon</strong>=Longitude parameter name<strong>&amp;</strong><br /><strong>&nbsp; &nbsp; &nbsp; par_name_return</strong>=(Returned text parameter name)<strong>&amp;</strong><br /><strong>&nbsp; &nbsp; &nbsp; google_api_key</strong>=Google API KEY<strong>&amp;</strong><br /><strong>&nbsp; &nbsp; &nbsp; viz_url</strong>=Your published viz link (copied from share button)</p>
+<p><em>&nbsp; &nbsp; &nbsp; https://danielgalizi.github.io/Tableau_Places_Search/Tableau_Places_Search.html</em><strong>?</strong><br /><strong>&nbsp; &nbsp; &nbsp; par_name_actv</strong>=Activate parameter name<strong>&amp;</strong><br /><strong>&nbsp; &nbsp; &nbsp; par_name_lat</strong>=Latitude parameter name<strong>&amp;</strong><br /><strong>&nbsp; &nbsp; &nbsp; par_name_lon</strong>=Longitude parameter name<strong>&amp;</strong><br /><strong>&nbsp; &nbsp; &nbsp; par_name_return</strong>=(Returned text parameter name)<strong>&amp;</strong><br /><strong>&nbsp; &nbsp; &nbsp; google_api_key</strong>=Google API KEY<strong>&amp;</strong><br /><strong>&nbsp; &nbsp; &nbsp; viz_url</strong>=Your published viz link (copied from share button)</p>
   
 Full URL:   
 
-    https://danielgalizi.github.io/Tableau_Map_Search_Auto-Complete/Search_autocomplete_Tableau_MAP.html?par_name_actv=ACTIVATE&par_name_lat=LAT_PAR&par_name_lon=LON_PAR&par_name_return=LOCATION_STR&google_api_key=AIzaSyCdit-GymHhJtNvB-kuXzN5rZKmsUqHRlU&viz_url=https://public.tableau.com/views/MAP_69/Painel1
+    https://danielgalizi.github.io/Tableau_Places_Search/Tableau_Places_Search.html?par_name_actv=ACTIVATE&par_name_lat=LAT_PAR&par_name_lon=LON_PAR&par_name_return=LOCATION_STR&google_api_key=AIzaSyCdit-GymHhJtNvB-kuXzN5rZKmsUqHRlU&viz_url=https://public.tableau.com/views/MAP_69/Painel1
 [Click here to follow the full URL](https://danielgalizi.github.io/Tableau_Map_Search_Auto-Complete/Search_autocomplete_Tableau_MAP.html?par_name_actv=ACTIVATE&par_name_lat=LAT_PAR&par_name_lon=LON_PAR&par_name_return=LOCATION_STR&google_api_key=AIzaSyCdit-GymHhJtNvB-kuXzN5rZKmsUqHRlU&viz_url=https://public.tableau.com/views/MAP_69/Painel1). 
  
 
@@ -38,7 +38,7 @@ Full URL:
 Help is always appreciated.
 
 ## Documentation
-[Visit the project website and read the documentation here.](https://github.com/danielgalizi/Tableau_Map_Search_Auto-Complete)
+[Visit the project website and read the documentation here.](https://github.com/danielgalizi/Tableau_Places_Search)
 
 ## Issues
 Feel Free to fix and share any problems or bugs you encounter in the README or code.
