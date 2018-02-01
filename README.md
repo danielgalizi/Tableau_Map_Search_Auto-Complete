@@ -26,7 +26,8 @@ The Engine can interact and communicate with Tableau and you'll get the data int
 
 3. Replace URL **VARIABLES** with the values you have from the previous step (don't forget to keep the separators):
 
-<em>https://danielgalizi.github.io/Tableau_Map_Search_Auto-Complete/Search_autocomplete_Tableau_MAP.html</em></span><strong>?&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; par_name_actv</strong>=Activate parameter name<strong>&amp;</strong><br /><strong>&nbsp; &nbsp; &nbsp;&nbsp;par_name_lat</strong>=Latitude parameter name<strong>&amp;</strong><br /><strong>&nbsp;&nbsp; &nbsp; &nbsp;par_name_lon</strong>=Longitude parameter name<strong>&amp;</strong><br /><strong>&nbsp;&nbsp; &nbsp; &nbsp;par_name_return</strong>=(Returned text parameter name)<strong>&amp;</strong><br /><strong>&nbsp;&nbsp; &nbsp; &nbsp;google_api_key</strong>=Google API KEY<strong>&amp;</strong><br /><strong>&nbsp; &nbsp;&nbsp; &nbsp;viz_url</strong>=Your published viz link (copied from share button)</p>
+<p><em>https://danielgalizi.github.io/Tableau_Map_Search_Auto-Complete/Search_autocomplete_Tableau_MAP.html</em><strong>?</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; par_name_actv</strong>=Activate parameter name<strong>&amp;</strong><br /><strong>&nbsp; &nbsp; &nbsp;&nbsp;par_name_lat</strong>=Latitude parameter name<strong>&amp;</strong><br /><strong>&nbsp;&nbsp; &nbsp; &nbsp;par_name_lon</strong>=Longitude parameter name<strong>&amp;</strong><br /><strong>&nbsp;&nbsp; &nbsp; &nbsp;par_name_return</strong>=(Returned text parameter name)<strong>&amp;</strong><br /><strong>&nbsp;&nbsp; &nbsp; &nbsp;google_api_key</strong>=Google API KEY<strong>&amp;</strong><br /><strong>&nbsp; &nbsp;&nbsp; &nbsp;viz_url</strong>=Your published viz link (copied from share button)</p>
   
 Full URL:   
 
