@@ -31,7 +31,7 @@ The Engine can interact and communicate with Tableau and you'll get the data int
 Full URL:   
 
     https://danielgalizi.github.io/Tableau_Places_Search/Tableau_Places_Search.html?par_name_actv=ACTIVATE&par_name_lat=LAT_PAR&par_name_lon=LON_PAR&par_name_return=LOCATION_STR&google_api_key=AIzaSyCdit-GymHhJtNvB-kuXzN5rZKmsUqHRlU&viz_url=https://public.tableau.com/views/MAP_69/Painel1
-[Click here to follow the full URL](https://danielgalizi.github.io/Tableau_Map_Search_Auto-Complete/Search_autocomplete_Tableau_MAP.html?par_name_actv=ACTIVATE&par_name_lat=LAT_PAR&par_name_lon=LON_PAR&par_name_return=LOCATION_STR&google_api_key=AIzaSyCdit-GymHhJtNvB-kuXzN5rZKmsUqHRlU&viz_url=https://public.tableau.com/views/MAP_69/Painel1). 
+[Click here to follow the full URL](https://danielgalizi.github.io/Tableau_Places_Search/Tableau_Places_Search.html?par_name_actv=ACTIVATE&par_name_lat=LAT_PAR&par_name_lon=LON_PAR&par_name_return=LOCATION_STR&google_api_key=AIzaSyCdit-GymHhJtNvB-kuXzN5rZKmsUqHRlU&viz_url=https://public.tableau.com/views/MAP_69/Painel1). 
  
 
 ## Contributions
