@@ -6,7 +6,8 @@ The Engine can interact and communicate with Tableau and you'll get the data int
 
 
 ## Prerequisites
-* You must have a published VIZ with parameters and a Google Places API Key (https://developers.google.com/places/web-service/get-api-key). 
+* You must have a published VIZ with parameters and a Google Places API Key
+    - Get the Key for free here: (https://developers.google.com/places/web-service/get-api-key). 
 
 
 ## Setup
@@ -25,7 +26,7 @@ The Engine can interact and communicate with Tableau and you'll get the data int
 
 3. Replace URL **VARIABLES** with the values you have from the previous step (don't forget to keep the separators):
 
-<p>&nbsp; <strong>&nbsp; &nbsp;</strong>&nbsp;<span style="text-decoration: underline;"><em>https://danielgalizi.github.io/Tableau_Map_Search_Auto-Complete/Search_autocomplete_Tableau_MAP.html</em></span><strong>?&nbsp; &nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;</strong><strong>par_name_actv</strong>=<span style="color: #333333; background-color: #ffff99;"><em>Activate parameter name</em></span><strong>&amp;</strong><br /><strong>&nbsp; &nbsp; &nbsp;&nbsp;par_name_lat</strong>=<span style="text-decoration: underline;"><span style="background-color: #ffff99;">L</span><span style="color: #333333; background-color: #ffff99; text-decoration: underline;"><em>atitude parameter name</em></span></span><strong>&amp;</strong><br /><strong>&nbsp;&nbsp; &nbsp; &nbsp;par_name_lon</strong>=<span style="text-decoration: underline; background-color: #ffff99;">L<span style="color: #333333; text-decoration: underline;"><em>ongitude parameter name</em></span></span><strong>&amp;</strong><br /><strong>&nbsp;&nbsp; &nbsp; &nbsp;par_name_return</strong>=<span style="text-decoration: underline;"><span style="background-color: #ffff99;">R</span><span style="color: #333333; background-color: #ffff99; text-decoration: underline;"><em>eturned text parameter name</em></span></span><strong>&amp;</strong><br /><strong>&nbsp;&nbsp; &nbsp; &nbsp;google_api_key</strong>=<span style="text-decoration: underline;"><span style="color: #333333; background-color: #ffff99; text-decoration: underline;"><em>Google API KEY</em></span></span><strong>&amp;</strong><br /><strong>&nbsp; &nbsp;&nbsp; &nbsp;viz_url</strong>=<span style="text-decoration: underline;"><span style="background-color: #ffff99;">Y</span><span style="color: #000000; background-color: #ffff99; text-decoration: underline;"><em>our published viz link (copied from share button)</em></span></span></p>
+<p>&nbsp; <strong>&nbsp; &nbsp;</strong>&nbsp;<span style="text-decoration: underline;"><em>https://danielgalizi.github.io/Tableau_Map_Search_Auto-Complete/Search_autocomplete_Tableau_MAP.html</em></span><strong>?&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</strong><strong>par_name_actv</strong>=(Activate parameter name)<strong>&amp;</strong><br /><strong>&nbsp; &nbsp; &nbsp;&nbsp;par_name_lat</strong>=(Latitude parameter name)<strong>&amp;</strong><br /><strong>&nbsp;&nbsp; &nbsp; &nbsp;par_name_lon</strong>=(Longitude parameter name)<strong>&amp;</strong><br /><strong>&nbsp;&nbsp; &nbsp; &nbsp;par_name_return</strong>=(Returned text parameter name)<strong>&amp;</strong><br /><strong>&nbsp;&nbsp; &nbsp; &nbsp;google_api_key</strong>=(Google API KEY)<strong>&amp;</strong><br /><strong>&nbsp; &nbsp;&nbsp; &nbsp;viz_url</strong>=(Your published viz link (copied from share button))</p>
   
 Full URL:   
 
