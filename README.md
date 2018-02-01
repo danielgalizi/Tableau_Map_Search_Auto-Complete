@@ -33,6 +33,9 @@ Full URL:
     https://danielgalizi.github.io/Tableau_Places_Search/Tableau_Places_Search.html?par_name_actv=ACTIVATE&par_name_lat=LAT_PAR&par_name_lon=LON_PAR&par_name_return=LOCATION_STR&google_api_key=AIzaSyCdit-GymHhJtNvB-kuXzN5rZKmsUqHRlU&viz_url=https://public.tableau.com/views/MAP_69/Painel1
 [Click here to follow the full URL](https://danielgalizi.github.io/Tableau_Places_Search/Tableau_Places_Search.html?par_name_actv=ACTIVATE&par_name_lat=LAT_PAR&par_name_lon=LON_PAR&par_name_return=LOCATION_STR&google_api_key=AIzaSyCdit-GymHhJtNvB-kuXzN5rZKmsUqHRlU&viz_url=https://public.tableau.com/views/MAP_69/Painel1). 
  
+ 
+## Usage
+All you need to do is to type the desired place/address/street... (or part of it) in the text box and select the desired name in the auto-complete list. After clicking, the embedded viz parameters will receive the results.
 
 ## Contributions
 Help is always appreciated.
