@@ -1,7 +1,7 @@
 # Tableau Places Search Engine
 
 ## Why the Tableau Places Search Engine?
-With the engine you can search, using Google's auto-complete feature, for places (addresses, stores, nature, etc) from all over the world and get the results into Tableau.
+With the engine (using Google's Places API) you can search for places (addresses, stores, nature, etc) from all over the world and get the results into Tableau.
 The Engine can interact and communicate with Tableau and you'll get the data into your viz, so, there is no need for coding, programming knowledge or complex structures. You'll only need Tableau Knowledge.
 
 
