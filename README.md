@@ -41,7 +41,7 @@ Help is always appreciated.
 [Visit the project website and read the documentation here.](https://github.com/danielgalizi/Tableau_Map_Search_Auto-Complete)
 
 ## Issues
-Feel Free to fix and share any problems or bugs you encounter in the docs or sample code. 
+Feel Free to fix and share any problems or bugs you encounter in the README or code.
 
 ## Authors
 
